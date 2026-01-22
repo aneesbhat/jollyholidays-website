@@ -77,7 +77,7 @@ header h1 {font-size:22px;}
 
 .hero {
   height:50vh;
-  background:url('images/banner.avif') center/cover no-repeat;
+  background:url('images/istockphoto-1323846766-612x612.jpg') center/cover no-repeat;
   display:flex;align-items:center;flex-direction:column;justify-content:center;gap:20px;
   text-align:center;color:white;padding:0 20px;
 }
