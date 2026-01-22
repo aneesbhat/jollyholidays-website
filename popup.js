@@ -13,7 +13,7 @@ function closePopup() {
 
 // Show popup with 3-second delay on every page load
 document.addEventListener("DOMContentLoaded", function () {
-  setTimeout(openPopup, 3000); // 3000ms = 3 seconds
+  setTimeout(openPopup, 1000); // 3000ms = 3 seconds
 });
 
 // Open popup on button clicks
