@@ -34,6 +34,126 @@ section {
 }
 
 
+#jh-preloader {
+  position: fixed;
+  inset: 0;
+  background: #2C7AA6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity .4s ease, visibility .4s ease;
+}
+
+/* Brand */
+.brand {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .8px;
+  margin-bottom: 2rem;
+}
+
+/* Icon Cards */
+.icon-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 76px;
+  height: 90px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,.22);
+}
+
+/* Individual Cards */
+.shikara {
+  background: #2E6B3E;
+  animation: float 2.4s ease-in-out infinite;
+}
+
+.leaf {
+  background: #F4B400;
+  animation: sway 2.6s ease-in-out infinite;
+}
+
+.mountain {
+  background: #1E3D59;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.bag {
+  background: #E63946;
+  animation: bounce 2.2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes sway {
+  0%,100% { transform: rotate(0); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* CTA */
+.cta {
+  margin-top: 2rem;
+  font-size: 1.15rem;
+  color: #ffffff;
+  opacity: .95;
+  letter-spacing: .6px;
+}
+
+/* 3 Dot Loader */
+.dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dots span {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: dots 1.4s infinite;
+}
+
+.dots span:nth-child(2) { animation-delay: .2s; }
+.dots span:nth-child(3) { animation-delay: .4s; }
+
+@keyframes dots {
+  0%,100% { opacity: .3; }
+  50% { opacity: 1; }
+}
+
+/* Hide */
+#jh-preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
 
 
 

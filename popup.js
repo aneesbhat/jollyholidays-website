@@ -1,4 +1,3 @@
-// Get elements
 const popup = document.getElementById("popup");
 const closePopupBtn = document.getElementById("closePopupBtn");
 
@@ -12,9 +11,9 @@ function closePopup() {
   popup.style.display = "none";
 }
 
-// Show popup on every page load
+// Show popup with 3-second delay on every page load
 document.addEventListener("DOMContentLoaded", function () {
-  openPopup();
+  setTimeout(openPopup, 3000); // 3000ms = 3 seconds
 });
 
 // Open popup on button clicks
