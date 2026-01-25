@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour Packages</title>
+
+<link rel="stylesheet" href="media.css">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  background:#f4f6fb;
+  color:#111;
+}
+img{display:block}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 16px;
+}
+
+header{
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+  padding:14px 0;
+}
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:#1a73e8;
+}
+nav{float:right}
+nav a{
+  margin-left:16px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+nav a.active,nav a:hover{color:#1a73e8}
+
+.page-header{
+  background:linear-gradient(90deg,#1a73e8,#4fa3ff);
+  color:#fff;
+  padding:40px 0;
+  text-align:center;
+  margin-bottom:24px;
+}
+.page-header h1{font-size:32px;margin-bottom:6px}
+
+.filters{text-align:center;margin-bottom:28px}
+.filter-btn{
+  padding:8px 18px;
+  margin:5px;
+  border:none;
+  border-radius:20px;
+  background:#e5e7eb;
+  cursor:pointer;
+  font-weight:500;
+}
+.filter-btn.active{background:#1a73e8;color:#fff}
+
+.packages{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:26px;
+}
+
+.pkg-card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition:.25s;
+}
+.pkg-card:hover{transform:translateY(-5px)}
+
+.pkg-image{
+  position:relative;
+  width:100%;
+  height:220px;
+}
+.pkg-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.pkg-duration{
+  position:absolute;
+  top:14px;
+  left:14px;
+  background:linear-gradient(135deg,#7c3aed,#ec4899);
+  color:#fff;
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.pkg-ribbon{
+  position:absolute;
+  top:18px;
+  right:-42px;
+  background:linear-gradient(135deg,#ff7a18,#ffb347);
+  color:#fff;
+  padding:6px 48px;
+  font-size:12px;
+  font-weight:700;
+  transform:rotate(45deg);
+}
+
+.pkg-content{padding:18px}
+.pkg-content h3{
+  font-size:17px;
+  line-height:1.4;
+  margin-bottom:10px;
+}
+
+.pkg-features{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+.pkg-features span{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#f1f5f9;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.pkg-rating{
+  font-size:14px;
+  color:#f59e0b;
+  margin-bottom:14px;
+  font-weight:600;
+}
+
+.pkg-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:1px dashed #e5e7eb;
+  padding-top:12px;
+}
+.pkg-btn{
+  background:linear-gradient(135deg,#7c3aed,#ec4899);
+  color:#fff;
+  padding:9px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+}
+
+footer{
+  margin-top:40px;
+  padding:18px;
+  text-align:center;
+  background:#111;
+  color:#fff;
+}
+
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter;
+  background:#ffffff;
+  color:#0f172a;
+}
+
+/* HERO SECTION */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:72px 0 88px;
+}
+
+/* BACKGROUND GLOW */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(700px 300px at 20% 20%, rgba(139,92,246,.15), transparent 60%),
+    radial-gradient(700px 300px at 80% 20%, rgba(248,113,113,.15), transparent 60%);
+  pointer-events:none;
+}
+
+/* CONTAINER */
+.hero-container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 24px;
+  position:relative;
+  z-index:1;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+  font-size:14px;
+  color:#64748b;
+  margin-bottom:14px;
+}
+.breadcrumb span{
+  margin:0 6px;
+}
+
+/* BADGE */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  font-weight:600;
+  color:#334155;
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:999px;
+  padding:6px 14px;
+  box-shadow:0 4px 12px rgba(0,0,0,.04);
+  margin-bottom:18px;
+}
+.badge::before{
+  content:"✦";
+  font-size:14px;
+}
+
+/* HEADING */
+.hero h1{
+  font-size:42px;
+  line-height:1.15;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  margin-bottom:14px;
+}
+
+/* GRADIENT TEXT */
+.grad-kashmir{
+  background:linear-gradient(90deg,#7c3aed,#8b5cf6);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.grad-jammu{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.grad-ladakh{
+  background:linear-gradient(90deg,#ec4899,#f87171);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* SUBTEXT */
+.hero p{
+  max-width:620px;
+  font-size:17px;
+  line-height:1.6;
+  color:#6b7280;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+/* ================= HEADER ================= */
+.header{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  box-shadow:0 10px 40px rgba(0,0,0,.2);
+}
+
+.header-inner{
+  width:100%;
+  padding:18px 30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* LOGO */
+.logo{
+  font-size:24px;
+  font-weight:700;
+  color:#fff;
+}
+.logo span{color:#38bdf8}
+
+/* RIGHT SIDE */
+.right-box{
+  display:flex;
+  align-items:center;
+  gap:35px;
+}
+
+/* NAV */
+.nav-menu{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+.nav-menu li{position:relative}
+.nav-menu a{
+  text-decoration:none;
+  color:#e5e7eb;
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  transition:.3s;
+}
+.nav-menu a:hover{color:#38bdf8}
+
+/* DROPDOWN */
+.arrow{transition:.3s;font-size:14px}
+.dropdown:hover .arrow{transform:rotate(180deg)}
+
+.dropdown-menu{
+  position:absolute;
+  top:130%;
+  left:0;
+  min-width:240px;
+  background:linear-gradient(180deg,#fff,#f8fafc);
+  border-radius:14px;
+  box-shadow:0 20px 50px rgba(0,0,0,.15);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(15px);
+  transition:.35s;
+  overflow:hidden;
+  z-index:999;
+}
+
+.dropdown-menu a{
+  display:block;
+  padding:14px 20px;
+  color:#0f172a;
+  font-size:14px;
+}
+.dropdown-menu a:hover{
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  color:#fff;
+}
+
+.dropdown:hover .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* CTA */
+.cta{
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  color:#fff;
+  padding:11px 22px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 10px 30px rgba(56,189,248,.45);
+  transition:.3s;
+}
+.cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 15px 40px rgba(37,99,235,.6);
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+.hamburger span{
+  width:25px;
+  height:2px;
+  background:#fff;
+}
+
+/* ================= OFF CANVAS ================= */
+.offcanvas{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:300px;
+  height:100vh;
+  background:linear-gradient(180deg,#0f2027,#203a43);
+  padding:25px;
+  transition:.4s;
+  z-index:1000;
+  display:flex;
+  flex-direction:column;
+}
+
+.offcanvas.active{right:0}
+
+.off-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.close{
+  font-size:30px;
+  color:#fff;
+  cursor:pointer;
+}
+
+.off-menu{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.off-menu a,
+.off-toggle{
+  color:#e5e7eb;
+  text-decoration:none;
+  font-size:16px;
+  background:none;
+  border:none;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.off-submenu{
+  list-style:none;
+  display:none;
+  padding-left:15px;
+  gap:10px;
+  flex-direction:column;
+}
+
+.off-dropdown.active .off-submenu{display:flex}
+
+.off-cta{
+  margin-top:auto;
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  padding:14px;
+  border-radius:30px;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* OVERLAY */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+  z-index:999;
+}
+.overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.popup {
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.6);display:none;
+  justify-content:center;align-items:center;z-index:998;
+}
+.popup-content {
+  background:white;padding:25px;border-radius:10px;width:350px;position:relative;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+.animate-popup {animation:scaleUp 0.4s ease;}
+@keyframes scaleUp {0%{transform:scale(0.7);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.popup-content h3 {text-align:center;margin-bottom:10px;color:#2C7AA6;}
+.popup-content .sub-text {font-size:14px;text-align:center;color:#555;margin-bottom:15px;}
+.popup-content input,.popup-content select {
+  width:100%;padding:10px;margin:8px 0;
+  border:1px solid #ccc;border-radius:5px;
+}
+.popup-content button {
+  width:100%;padding:12px;background:#2C7AA6;color:white;
+  border:none;border-radius:5px;font-size:16px;cursor:pointer;transition:0.3s;
+}
+.popup-content button:hover {background:#2E6B3E;}
+.close-popup {
+  position:absolute;top:10px;right:15px;font-size:20px;cursor:pointer;color:#2B2B2B;
+}
+#formMsg {margin-top:10px;font-size:14px;text-align:center;}
+
+/* SECTION */
+.trip-planning-section {
+  padding: 80px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.trip-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  padding: 48px 32px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* BADGE */
+.trip-badge {
+  display: inline-block;
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+/* HEADING */
+.trip-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* DESCRIPTION */
+.trip-text {
+  font-size: 15px;
+  color: #6b7280;
+  max-width: 620px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+/* BUTTON */
+.trip-btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 680px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #7c3aed, #ec4899, #f97316);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trip-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35);
+}
+
+.custom-plan-section {
+  min-height: 50vh;
+  padding: 40px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #f9fafb, #ffffff);
+}
+
+.custom-plan-card {
+  width: 100%;
+  max-width: 880px;
+  padding: 52px 32px;
+  background: #ffffff;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* Badge */
+.custom-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7c3aed;
+  background: #ede9fe;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+/* Title */
+.custom-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Text */
+.custom-text {
+  font-size: 16px;
+  color: #6b7280;
+  max-width: 680px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+/* Points */
+.custom-points {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: #f9fafb;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.point i {
+  font-size: 16px;
+  color: #7c3aed;
+}
+
+/* Button */
+.custom-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 660px;
+  padding: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #7c3aed, #ec4899, #f97316);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(124, 58, 237, 0.35);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .custom-title {
+    font-size: 26px;
+  }
+
+  .custom-plan-card {
+    padding: 40px 20px;
+  }
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .trip-title {
+    font-size: 24px;
+  }
+
+  .trip-card {
+    padding: 36px 20px;
+  }
+}
+
+@media(max-width:992px){
+  .right-box{display:none}
+  .hamburger{display:flex}
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+
+    <div class="logo"><span>Jolly</span> Holidays</div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="right-box">
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Why Us</a></li>
+
+        <li class="dropdown">
+          <a href="#">Packages <span class="arrow">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Kashmir Tour Packages</a></li>
+            <li><a href="#">Katra Tour Packages</a></li>
+            <li><a href="#">Ladakh Tour Packages</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <a href="#" class="cta">Get Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="offcanvas" id="offcanvas">
+  <div class="off-header">
+    <div class="logo"><span>Jolly</span> Holidays</div>
+    <span class="close" id="close">&times;</span>
+  </div>
+
+  <ul class="off-menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Why Us</a></li>
+
+    <li class="off-dropdown">
+      <button class="off-toggle">Packages ▾</button>
+      <ul class="off-submenu">
+        <li><a href="#">Kashmir Tour Packages</a></li>
+        <li><a href="#">Katra Tour Packages</a></li>
+        <li><a href="#">Ladakh Tour Packages</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Testimonials</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <a href="#" class="off-cta">Get Free Quote</a>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+
+<div class="popup" id="popup">
+    <div class="popup-content animate-popup">
+      <span class="close-popup" id="closePopupBtn">&times;</span>
+      <h3>Book Your Kashmir Trip</h3>
+      <p class="sub-text">Fill in your details and our travel expert will connect with you.</p>
+      <form id="leadForm" action="https://formsubmit.co/56216dbab54f460d201c5cea22fe1ef7" method="POST">
+        <input type="text" name="fullname" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" id="phone" placeholder="Enter phone number"minlength="10" maxlength="12" pattern="\d{10,12}" required>
+        <select name="package" required>
+          <option value="" disabled selected>Select Kashmir Package Category</option>
+          <option value="classic">Classic Kashmir Package</option>
+          <option value="deluxe">Deluxe Kashmir Package</option>
+          <option value="premium">Premium Kashmir Package</option>
+          <option value="luxury">Luxury Kashmir Package</option>
+        </select>
+       
+        <input type="text" name="website" id="website" style="display:none;">
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_redirect" value="false">
+        <input type="hidden" name="_template" value="table">
+        <button type="submit">Get Free Quote</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+<section class="hero">
+  <div class="hero-container">
+
+    <div class="breadcrumb">
+      Home <span>/</span> Packages <span>/</span> Kashmir Tour
+    </div>
+
+    <div class="badge">
+      Curated itineraries
+    </div>
+
+    <h1>
+      Handpicked
+      <span class="grad-kashmir">Kashmir</span>
+      ·
+      <span class="grad-jammu">Heaven on</span>
+      ·
+      <span class="grad-ladakh">Earth</span><br>
+      Packages
+    </h1>
+
+    <p>
+      Hotels, transfers & experiences bundled neatly—transparent pricing,
+      no hidden fees.
+    </p>
+
+  </div>
+</section>
+
+<section class="filters container">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="kashmir">Honeymoon Couples</button>
+  <button class="filter-btn" data-filter="jammu">Family Trip</button>
+  <button class="filter-btn" data-filter="ladakh">Custom Plan</button>
+</section>
+
+<section class="packages container">
+
+  <div class="pkg-card kashmir">
+    <div class="pkg-image">
+      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <span class="pkg-duration">3N / 4D</span>
+      <span class="pkg-ribbon">Best Seller</span>
+    </div>
+    <div class="pkg-content">
+      <h3>Kashmir – Srinagar · Gulmarg · Pahalgam</h3>
+      <div class="pkg-features">
+        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
+        <span><i class="fa-solid fa-car"></i> Cab</span>
+        <span><i class="fa-solid fa-utensils"></i> Breakfast</span>
+      </div>
+      <div class="pkg-rating">⭐ 4.5</div>
+      <div class="pkg-footer">
+        <strong>₹15,499</strong>
+        <a href="#" class="pkg-btn">Get Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pkg-card kashmir">
+    <div class="pkg-image">
+      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <span class="pkg-duration">3N / 4D</span>
+      <span class="pkg-ribbon">Best Seller</span>
+    </div>
+    <div class="pkg-content">
+      <h3>Kashmir – Srinagar · Gulmarg · Pahalgam</h3>
+      <div class="pkg-features">
+        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
+        <span><i class="fa-solid fa-car"></i> Cab</span>
+        <span><i class="fa-solid fa-utensils"></i> Breakfast</span>
+      </div>
+      <div class="pkg-rating">⭐ 4.5</div>
+      <div class="pkg-footer">
+        <strong>₹15,499</strong>
+        <a href="#" class="pkg-btn">Get Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pkg-card kashmir">
+    <div class="pkg-image">
+      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <span class="pkg-duration">3N / 4D</span>
+      <span class="pkg-ribbon">Best Seller</span>
+    </div>
+    <div class="pkg-content">
+      <h3>Kashmir – Srinagar · Gulmarg · Pahalgam</h3>
+      <div class="pkg-features">
+        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
+        <span><i class="fa-solid fa-car"></i> Cab</span>
+        <span><i class="fa-solid fa-utensils"></i> Breakfast</span>
+      </div>
+      <div class="pkg-rating">⭐ 4.5</div>
+      <div class="pkg-footer">
+        <strong>₹15,499</strong>
+        <a href="#" class="pkg-btn">Get Quote</a>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg-card jammu">
+    <div class="pkg-image">
+      <img src="images/Arizal.avif" loading="lazy" alt="Jammu Tour">
+      <span class="pkg-duration">2N / 3D</span>
+    </div>
+    <div class="pkg-content">
+      <h3>Vaishno Devi with Patnitop</h3>
+      <div class="pkg-features">
+        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
+        <span><i class="fa-solid fa-car"></i> Cab</span>
+      </div>
+      <div class="pkg-rating">⭐ 4.4</div>
+      <div class="pkg-footer">
+        <strong>₹9,999</strong>
+        <a href="#" class="pkg-btn">Get Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pkg-card jammu">
+    <div class="pkg-image">
+      <img src="images/Arizal.avif" loading="lazy" alt="Jammu Tour">
+      <span class="pkg-duration">2N / 3D</span>
+    </div>
+    <div class="pkg-content">
+      <h3>Vaishno Devi with Patnitop</h3>
+      <div class="pkg-features">
+        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
+        <span><i class="fa-solid fa-car"></i> Cab</span>
+      </div>
+      <div class="pkg-rating">⭐ 4.4</div>
+      <div class="pkg-footer">
+        <strong>₹9,999</strong>
+        <a href="#" class="pkg-btn">Get Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pkg-card jammu">
+    <div class="pkg-image">
+      <img src="images/Arizal.avif" loading="lazy" alt="Jammu Tour">
+      <span class="pkg-duration">2N / 3D</span>
+    </div>
+    <div class="pkg-content">
+      <h3>Vaishno Devi with Patnitop</h3>
+      <div class="pkg-features">
+        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
+        <span><i class="fa-solid fa-car"></i> Cab</span>
+      </div>
+      <div class="pkg-rating">⭐ 4.4</div>
+      <div class="pkg-footer">
+        <strong>₹9,999</strong>
+        <a href="#" class="pkg-btn">Get Quote</a>
+      </div>
+    </div>
+  </div>
+
+ <!-- //Custom Built Package -->
+
+</section>
+
+<section class="custom-plan-section">
+  <div class="custom-plan-card">
+
+    <span class="custom-badge">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      Custom Trip Planner
+    </span>
+
+    <h2 class="custom-title">
+      Let’s Customise Your Package
+    </h2>
+
+    <p class="custom-text">
+      This is your custom travel plan — built exactly the way you want.
+      Choose destinations, hotels, duration and experiences, and our experts
+      will craft a personalised itinerary just for you.
+    </p>
+
+    <div class="custom-points">
+      <div class="point">
+        <i class="fa-solid fa-route"></i>
+        <span>Your route, your pace</span>
+      </div>
+      <div class="point">
+        <i class="fa-solid fa-hotel"></i>
+        <span>Handpicked stays</span>
+      </div>
+      <div class="point">
+        <i class="fa-solid fa-wallet"></i>
+        <span>Budget-smart planning</span>
+      </div>
+    </div>
+
+    <a href="#" class="custom-btn" aria-label="Build your custom travel package">
+      <i class="fa-solid fa-comments"></i>
+      Build My Custom Plan
+    </a>
+
+  </div>
+</section>
+
+
+
+<footer>
+  © 2026 Jolly Holidays. All Rights Reserved.
+</footer>
+
+<script>
+const btns=document.querySelectorAll(".filter-btn");
+const cards=document.querySelectorAll(".pkg-card");
+btns.forEach(b=>{
+  b.onclick=()=>{
+    document.querySelector(".filter-btn.active").classList.remove("active");
+    b.classList.add("active");
+    const f=b.dataset.filter;
+    cards.forEach(c=>{
+      c.style.display=(f==="all"||c.classList.contains(f))?"block":"none";
+    });
+  }
+});
+</script>
+
+</body>
+<script src="offcanvas.js" defer></script>
+<script src="popup.js" defer></script>
+</html>

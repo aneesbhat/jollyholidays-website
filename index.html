@@ -14,40 +14,76 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Fredoka:wght@400;600&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
-
+  
+  <link rel="preload" as="image" href="images/banner.avif" fetchpriority="high">
   <link rel="preload" as="image" href="images/pack-1.avif" fetchpriority="high">
   <link rel="preload" as="image" href="images/pack-2.avif" fetchpriority="high">
   <link rel="preload" as="image" href="images/pack-3.avif" fetchpriority="high">
   <link rel="preload" as="image" href="images/pack-4.avif" fetchpriority="high">
-  <link rel="preload" as="image" href="images/banner.avif" fetchpriority="high">
+  
 
 </head>
 <body>
+<header class="header">
+  <div class="header-inner">
 
-  <header id="head">
-    <img src="images/logo.png" alt="Jolly Holidays logo with mountains, a lake, and trees, representing nature-focused travel and the tagline 'Feel the Nature.'">
-    <nav class="desktop-nav">
-      <a href="#home">Home</a>
-      <a href="#why-choose">Why Us</a>
-      <a href="#packages">Packages</a>
-      <a href="#Testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-      <button class="nav-btn" id="openPopupBtn">Get Free Quote</button>
-    </nav>
-    <button class="menu-btn" id="openCanvasBtn">☰</button>
-  </header>
+    <div class="logo"><span>Jolly</span> Holidays</div>
 
-  
-  <div class="offcanvas" id="offcanvas">
-    <button class="close-btn" id="closeCanvasBtn">&times;</button>
-    <h3 style="margin-bottom:30px;">Jolly Holidays</h3>
-    <a href="#home"> <i class="fa-solid fa-house"></i>Home</a>
-    <a href="#why-choose"><i class="fa-solid fa-people-group"></i>About Us</a>
-    <a href="#packages"><i class="fa-solid fa-cubes"></i>Packages</a>
-    <a href="#Testimonials"><i class="fa-solid fa-pen"></i>Testimonials</a>
-    <a href="#contact"><i class="fa-solid fa-address-card"></i>Contact</a>
-    <button class="cta-btn" id="openPopupBtnMobile">Get Free Quote</button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="right-box">
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Why Us</a></li>
+
+        <li class="dropdown">
+          <a href="#">Packages <span class="arrow">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="kashmir-packages.html">Kashmir Tour Packages</a></li>
+            <li><a href="#">Katra Tour Packages</a></li>
+            <li><a href="#">Ladakh Tour Packages</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <a href="#" class="cta">Get Free Quote</a>
+    </div>
   </div>
+</header>
+
+<div class="offcanvas" id="offcanvas">
+  <div class="off-header">
+    <div class="logo"><span>Jolly</span> Holidays</div>
+    <span class="close" id="close">&times;</span>
+  </div>
+
+  <ul class="off-menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Why Us</a></li>
+
+    <li class="off-dropdown">
+      <button class="off-toggle">Packages ▾</button>
+      <ul class="off-submenu">
+        <li><a href="#">Kashmir Tour Packages</a></li>
+        <li><a href="#">Katra Tour Packages</a></li>
+        <li><a href="#">Ladakh Tour Packages</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Testimonials</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <a href="#" class="off-cta">Get Free Quote</a>
+</div>
+
+<div class="overlay" id="overlay"></div>
+  
 
   
   <section class="hero" id="home">
@@ -637,4 +673,26 @@
 <script defer>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="iU61SNqCXZoIWUjxKo7mI";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
+<script>
+const hamburger=document.getElementById("hamburger");
+const offcanvas=document.getElementById("offcanvas");
+const overlay=document.getElementById("overlay");
+const closeBtn=document.getElementById("close");
+const toggle=document.querySelector(".off-toggle");
+
+hamburger.onclick=()=>{
+  offcanvas.classList.add("active");
+  overlay.classList.add("active");
+};
+
+overlay.onclick=closeBtn.onclick=()=>{
+  offcanvas.classList.remove("active");
+  overlay.classList.remove("active");
+};
+
+toggle.onclick=function(){
+  this.parentElement.classList.toggle("active");
+};
+</script>
+
 </html>
