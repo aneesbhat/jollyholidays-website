@@ -46,7 +46,7 @@ section {
   position: sticky;
   top:0px;
   z-index:999;
-  height:120px;
+  height:100px;
   
 }
 
@@ -217,7 +217,7 @@ section {
 
 .off-dropdown.active .off-submenu{display:flex}
 
-.off-cta{
+#off-cta{
   margin-top:auto;
   background:linear-gradient(135deg,#38bdf8,#2563eb);
   padding:14px;

@@ -58,7 +58,7 @@
 
 <div class="offcanvas" id="offcanvas">
   <div class="off-header">
-    <div class="logo"><span>Jolly</span> Holidays</div>
+    <div class="logo"><span>Jolly Holidays</span> </div>
     <span class="close" id="close">&times;</span>
   </div>
 
@@ -79,7 +79,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 
-  <a href="#" class="off-cta">Get Free Quote</a>
+  <a href="#" class="cta" id="off-cta" >Get Free Quote</a>
 </div>
 
 <div class="overlay" id="overlay"></div>
@@ -673,26 +673,6 @@
 <script defer>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="iU61SNqCXZoIWUjxKo7mI";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
-<script>
-const hamburger=document.getElementById("hamburger");
-const offcanvas=document.getElementById("offcanvas");
-const overlay=document.getElementById("overlay");
-const closeBtn=document.getElementById("close");
-const toggle=document.querySelector(".off-toggle");
 
-hamburger.onclick=()=>{
-  offcanvas.classList.add("active");
-  overlay.classList.add("active");
-};
-
-overlay.onclick=closeBtn.onclick=()=>{
-  offcanvas.classList.remove("active");
-  overlay.classList.remove("active");
-};
-
-toggle.onclick=function(){
-  this.parentElement.classList.toggle("active");
-};
-</script>
 
 </html>
