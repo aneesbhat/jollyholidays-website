@@ -43,6 +43,9 @@ section {
 .header{
   background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   box-shadow:0 10px 40px rgba(0,0,0,.2);
+  position:sticky;
+  top:0px;
+  z-index: 999;
 }
 
 .header-inner{
@@ -1383,12 +1386,6 @@ input:focus, :user-invalid {border-color:red;}
   }
 
   
-}
-
-.offcanvas a {
-  padding:20px;
-  border-radius:7px;
-  background-color:rgb(83, 3, 103);
 }
 
 .btn-canvas {
