@@ -278,21 +278,27 @@ body{
 .header{
   background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   box-shadow:0 10px 40px rgba(0,0,0,.2);
+  position: sticky;
+  top:0px;
+  z-index:999;
+  height:120px;
+  
 }
 
 .header-inner{
   width:100%;
-  padding:18px 30px;
   display:flex;
+  padding:0px 40px;
   align-items:center;
   justify-content:space-between;
+  align-items: center;
 }
 
 /* LOGO */
-.logo{
-  font-size:24px;
-  font-weight:700;
-  color:#fff;
+.header img{
+  width:150px;
+  height:auto;
+
 }
 .logo span{color:#38bdf8}
 
@@ -808,7 +814,7 @@ body{
 <header class="header">
   <div class="header-inner">
 
-    <div class="logo"><span>Jolly</span> Holidays</div>
+    <div class="logo"><img src="images/logo.png" alt=""></div>
 
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
