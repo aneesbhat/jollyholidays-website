@@ -195,25 +195,31 @@ nav a.active,nav a:hover{color:#1a73e8}
   padding-top:12px;
 }
 .pkg-btn{
-  background:linear-gradient(135deg,#7c3aed,#ec4899);
+  background:linear-gradient(135deg,#7c3aed,#ec4899) !important;
   color:#fff;
-  padding:9px 16px;
+  padding:11px 22px;
   border-radius:10px;
   text-decoration:none;
   font-size:13px;
   font-weight:600;
+  border:none;
 }
 
 
 .pkg-btns {
   color:#fff;
-  padding:9px 16px;
+  padding:11px 22px;
   border-radius:10px;
   text-decoration:none;
   font-size:13px;
   font-weight:600;
   background: linear-gradient(135deg, #25d366, #128c7e);
+  border:none;
 
+}
+
+.pkg-btns:hover {
+  box-shadow:0 5px 10px rgba(43, 187, 38, 0.6);
 }
 footer{
   margin-top:40px;
@@ -424,15 +430,15 @@ body{
   background:linear-gradient(135deg,#38bdf8,#2563eb);
   color:#fff;
   padding:11px 22px;
-  border-radius:30px;
+  border-radius:10px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 10px 30px rgba(56,189,248,.45);
+  /* box-shadow:0 10px 30px rgba(56,189,248,.45); */
   transition:.3s;
 }
 .cta:hover{
   transform:translateY(-2px);
-  box-shadow:0 15px 40px rgba(37,99,235,.6);
+  box-shadow:0 5px 10px rgba(137, 23, 101, 0.6);
 }
 
 /* ================= HAMBURGER ================= */
@@ -525,6 +531,7 @@ body{
   text-align:center;
   text-decoration:none;
   font-weight:600;
+  border:none;
 }
 
 /* OVERLAY */
@@ -1035,7 +1042,7 @@ body{
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
 
-  <button class="off-cta" id="heroPopupBtn">Get Free Quote</button>
+  <button class="off-cta cta" id="heroPopupBtn">Get Free Quote</button>
 </div>
 
 <div class="overlay" id="overlay"></div>
@@ -1052,10 +1059,13 @@ body{
         <input type="tel" name="phone" id="phone" placeholder="Enter phone number"minlength="10" maxlength="12" pattern="\d{10,12}" required>
         <select name="package" required>
           <option value="" disabled selected>Select Kashmir Package Category</option>
-          <option value="classic">Classic Kashmir Package</option>
-          <option value="deluxe">Deluxe Kashmir Package</option>
-          <option value="premium">Premium Kashmir Package</option>
-          <option value="luxury">Luxury Kashmir Package</option>
+          <option value="The Eternal Emerald_Honeymoon_Couple_Shikara_GandolaRide_1st_Phase_@22,420">The Eternal Emerald</option>
+          <option value="The Jolly Soulmate Suite_Honeymoon_Couple_Shikara_Honeymoon_Inclusions_@23,800">The Jolly Soulmate Suite</option>
+          <option value="The jolly Kashmir Prestige_Honeymoon_Couple_Shikara_GandolaRide_1st_Phase_Honeymoon_Inclusions_@30,200">The Jolly Kashmir Prestige</option>
+          <option value="The Valley Signature_Family_Trip_Shikara_@6,975">The Valley Signature</option>
+          <option value="The Jolly Family Fiesta_Family_Trip_Shikara_Gandola_1st_Phase_@6,625">The Jolly Family Fiesta</option>
+          <option value="The Jolly Family Roots Retreat_Family_Trip_Shikara_@6,815">The Jolly Family Roots Retreat</option>
+          <option value="Build My Custom Plan">Build My Custom Plant</option>
         </select>
        
         <input type="text" name="website" id="website" style="display:none;">
@@ -1111,7 +1121,7 @@ body{
 
   <div class="pkg-card kashmir">
     <div class="pkg-image">
-      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <img src="images/couple_package_1.avif" loading="lazy" alt="Kashmir Tour">
       <span class="pkg-duration">4N / 5D</span>
       <span class="pkg-ribbon">Best Seller</span>
     </div>
@@ -1129,7 +1139,7 @@ body{
       <strong>₹22,420 <span></span></strong>
       <div class="pkg-btnn">
         <a href="https://wa.link/zb0f8m" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        <button type="submit"class="pkg-btn" id="openPopupBtn">Get Quote</button>
+        <button type="submit"class="pkg-btn cta" id="openPopupBtn">Get Quote</button>
         </div>
       </div>
     </div>
@@ -1137,7 +1147,7 @@ body{
 
   <div class="pkg-card kashmir">
     <div class="pkg-image">
-      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <img src="images/couple_package_2.avif" loading="lazy" alt="Kashmir Tour">
       <span class="pkg-duration">4N / 5D</span>
       <span class="pkg-ribbons">Trending</span>
     </div>
@@ -1155,7 +1165,7 @@ body{
       <strong>₹23,800 <span></span></strong>
       <div class="pkg-btnn">
         <a href="https://wa.link/ae9fyu" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-       <button type="submit"class="pkg-btn" id="openPopupBtn">Get Quote</button>
+       <button type="submit"class="pkg-btn cta" id="openPopupBtn">Get Quote</button>
         </div>
       </div>
     </div>
@@ -1163,7 +1173,7 @@ body{
 
   <div class="pkg-card kashmir">
     <div class="pkg-image">
-      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <img src="images/couple_package_3.avif" loading="lazy" alt="Kashmir Tour">
       <span class="pkg-duration">5N / 6D</span>
       <span class="pkg-ribbonss">Premium</span>
     </div>
@@ -1182,7 +1192,7 @@ body{
       <strong>₹30,200 <span></span></strong>
       <div class="pkg-btnn">
         <a href="https://wa.link/nqdzmt" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        <button type="submit"class="pkg-btn" id="heroPopupBtn">Get Quote</button>
+        <button type="submit"class="pkg-btn cta" id="heroPopupBtn">Get Quote</button>
         </div>
       </div>
     </div>
@@ -1191,7 +1201,7 @@ body{
 
   <div class="pkg-card jammu">
     <div class="pkg-image">
-      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <img src="images/Family_Package_1.avif" loading="lazy" alt="Kashmir Tour">
       <span class="pkg-duration">5N / 6D</span>
       <span class="pkg-ribbon">Best Seller</span>
     </div>
@@ -1208,7 +1218,7 @@ body{
       <strong>₹6,976 <span></span></strong>
       <div class="pkg-btnn">
         <a href="https://wa.link/0d1ozo" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        <button type="submit"class="pkg-btn" id="heroPopupBtn">Get Quote</button>
+        <button type="submit"class="pkg-btn cta" id="heroPopupBtn">Get Quote</button>
         </div>
       </div>
     </div>
@@ -1218,7 +1228,7 @@ body{
 
    <div class="pkg-card jammu">
     <div class="pkg-image">
-      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <img src="images/Family_Package-2.avif" loading="lazy" alt="Kashmir Tour">
       <span class="pkg-duration">5N / 6D</span>
       <span class="pkg-ribbons">Trending</span>
     </div>
@@ -1236,7 +1246,7 @@ body{
       <strong>₹6,625 <span></span></strong>
       <div class="pkg-btnn">
         <a href="https://wa.link/5kjzn9" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        <button type="submit"class="pkg-btn" id="heroPopupBtn">Get Quote</button>
+        <button type="submit"class="pkg-btn cta" id="heroPopupBtn">Get Quote</button>
         </div>
       </div>
     </div>
@@ -1246,7 +1256,7 @@ body{
 
    <div class="pkg-card jammu">
     <div class="pkg-image">
-      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <img src="images/Family_Pacakge-3.avif" loading="lazy" alt="Kashmir Tour">
       <span class="pkg-duration">4N / 5D</span>
       <span class="pkg-ribbonss">Premium</span>
     </div>
@@ -1263,7 +1273,7 @@ body{
       <strong>₹5,815 <span></span></strong>
       <div class="pkg-btnn">
         <a href="https://wa.link/bbb6gy" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        <button type="submit"class="pkg-btn" id="heroPopupBtn">Get Quote</button>
+        <button type="submit"class="pkg-btn cta" id="heroPopupBtn">Get Quote</button>
         </div>
       </div>
     </div>
@@ -1312,7 +1322,7 @@ body{
       </div>
     </div>
 
-    <a href="#" class="custom-btn" aria-label="Build your custom travel package">
+    <a href="#" class="custom-btn cta" aria-label="Build your custom travel package">
       <i class="fa-solid fa-comments"></i>
       Build My Custom Plan
     </a>
