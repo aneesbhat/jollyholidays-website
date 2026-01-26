@@ -133,6 +133,30 @@ nav a.active,nav a:hover{color:#1a73e8}
   transform:rotate(45deg);
 }
 
+.pkg-ribbons {
+  position:absolute;
+  top:18px;
+  right:-42px;
+  background: linear-gradient(135deg,#38bdf8,#2563eb);
+  color:#fff;
+  padding:6px 48px;
+  font-size:12px;
+  font-weight:700;
+  transform:rotate(45deg);
+}
+
+.pkg-ribbonss {
+  position:absolute;
+  top:18px;
+  right:-42px;
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  color:#fff;
+  padding:6px 48px;
+  font-size:12px;
+  font-weight:700;
+  transform:rotate(45deg);
+}
+
 .pkg-content{padding:18px}
 .pkg-content h3{
   font-size:17px;
@@ -180,6 +204,17 @@ nav a.active,nav a:hover{color:#1a73e8}
   font-weight:600;
 }
 
+
+.pkg-btns {
+  color:#fff;
+  padding:9px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+
+}
 footer{
   margin-top:40px;
   padding:18px;
@@ -474,6 +509,15 @@ body{
 
 .off-cta{
   margin-top:auto;
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, .45);
+  padding:14px;
+  border-radius:30px;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:40px;
   background:linear-gradient(135deg,#38bdf8,#2563eb);
   padding:14px;
   border-radius:30px;
@@ -869,14 +913,7 @@ body{
 }
 
 #off-cta{
-  margin-top:40px;
-  background:linear-gradient(135deg,#38bdf8,#2563eb);
-  padding:14px;
-  border-radius:30px;
-  color:#fff;
-  text-align:center;
-  text-decoration:none;
-  font-weight:600;
+  
 }
 
 
@@ -929,6 +966,8 @@ body{
   .trip-card {
     padding: 36px 20px;
   }
+
+ 
 }
 
 @media(max-width:992px){
@@ -968,7 +1007,7 @@ body{
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
 
-      <a href="#" class="cta">Get Free Quote</a>
+      <a href="#" class="cta" id="heroPopupBtn">Get Free Quote</a>
     </div>
   </div>
 </header>
@@ -996,7 +1035,7 @@ body{
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
 
-  <a href="#" class="off-cta" id="off-cta">Get Free Quote</a>
+  <button class="off-cta" id="heroPopupBtn">Get Free Quote</button>
 </div>
 
 <div class="overlay" id="overlay"></div>
@@ -1073,20 +1112,51 @@ body{
   <div class="pkg-card kashmir">
     <div class="pkg-image">
       <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
-      <span class="pkg-duration">3N / 4D</span>
+      <span class="pkg-duration">4N / 5D</span>
       <span class="pkg-ribbon">Best Seller</span>
     </div>
     <div class="pkg-content">
-      <h3>Kashmir Honeymoon Special</h3>
+      <h3>The Eternal Emerald </h3>
       <div class="pkg-features">
         <span><i class="fa-solid fa-hotel"></i> Hotel</span>
         <span><i class="fa-solid fa-car"></i> Cab</span>
-        <span><i class="fa-solid fa-utensils"></i> Breakfast</span>
+        <span><i class="fa-solid fa-utensils"></i> Meals</span>
+        <span><i class="fa-solid fa-ship"></i> Shikara Ride</span>
+        <span><i class="fa-solid fa-cable-car"></i> Gandola Ride</span>
+      </div>
+      <div class="pkg-rating">⭐ 4.8</div>
+      <div class="pkg-footer">
+      <strong>₹22,420 <span></span></strong>
+      <div class="pkg-btnn">
+        <a href="https://wa.link/zb0f8m" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <button type="submit"class="pkg-btn" id="openPopupBtn">Get Quote</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pkg-card kashmir">
+    <div class="pkg-image">
+      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <span class="pkg-duration">4N / 5D</span>
+      <span class="pkg-ribbons">Trending</span>
+    </div>
+    <div class="pkg-content">
+      <h3>The Jolly Soulmate Suite </h3>
+      <div class="pkg-features">
+        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
+        <span><i class="fa-solid fa-car"></i> Cab</span>
+        <span><i class="fa-solid fa-utensils"></i> Meals</span>
+        <span><i class="fa-solid fa-ship"></i> Shikara Ride</span>
+        <span><i class="fa-solid fa-heart"></i> Honeymoon Inclusions</span>
       </div>
       <div class="pkg-rating">⭐ 4.7</div>
       <div class="pkg-footer">
-      <strong>₹22,000 <span>/Couple</span></strong>
-        <a href="#" class="pkg-btn">Get Quote</a>
+      <strong>₹23,800 <span></span></strong>
+      <div class="pkg-btnn">
+        <a href="https://wa.link/ae9fyu" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+       <button type="submit"class="pkg-btn" id="openPopupBtn">Get Quote</button>
+        </div>
       </div>
     </div>
   </div>
@@ -1094,103 +1164,117 @@ body{
   <div class="pkg-card kashmir">
     <div class="pkg-image">
       <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
-      <span class="pkg-duration">3N / 4D</span>
-      <span class="pkg-ribbon">Best Seller</span>
+      <span class="pkg-duration">5N / 6D</span>
+      <span class="pkg-ribbonss">Premium</span>
     </div>
     <div class="pkg-content">
-      <h3>Kashmir – Srinagar · Gulmarg · Pahalgam</h3>
+      <h3>The Jolly Kashmir Prestige </h3>
       <div class="pkg-features">
         <span><i class="fa-solid fa-hotel"></i> Hotel</span>
         <span><i class="fa-solid fa-car"></i> Cab</span>
-        <span><i class="fa-solid fa-utensils"></i> Breakfast</span>
+        <span><i class="fa-solid fa-utensils"></i> Meals</span>
+        <span><i class="fa-solid fa-ship"></i> Shikara Ride</span>
+        <span><i class="fa-solid fa-cable-car"></i> Gandola Ride</span>
+        <span><i class="fa-solid fa-heart"></i> Honeymoon Inclusions</span>
       </div>
-      <div class="pkg-rating">⭐ 4.5</div>
+      <div class="pkg-rating">⭐ 4.8</div>
       <div class="pkg-footer">
-        <strong>₹15,499</strong>
-        <a href="#" class="pkg-btn">Get Quote</a>
+      <strong>₹30,200 <span></span></strong>
+      <div class="pkg-btnn">
+        <a href="https://wa.link/nqdzmt" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <button type="submit"class="pkg-btn" id="heroPopupBtn">Get Quote</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+  <div class="pkg-card jammu">
+    <div class="pkg-image">
+      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <span class="pkg-duration">5N / 6D</span>
+      <span class="pkg-ribbon">Best Seller</span>
+    </div>
+    <div class="pkg-content">
+      <h3>The Valley Signature </h3>
+      <div class="pkg-features">
+        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
+        <span><i class="fa-solid fa-car"></i> Cab</span>
+        <span><i class="fa-solid fa-utensils"></i> Meals</span>
+        <span><i class="fa-solid fa-ship"></i> Shikara Ride</span>
+      </div>
+      <div class="pkg-rating">⭐ 4.7</div>
+      <div class="pkg-footer">
+      <strong>₹6,976 <span></span></strong>
+      <div class="pkg-btnn">
+        <a href="https://wa.link/0d1ozo" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <button type="submit"class="pkg-btn" id="heroPopupBtn">Get Quote</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="pkg-card kashmir">
+
+
+   <div class="pkg-card jammu">
     <div class="pkg-image">
       <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
-      <span class="pkg-duration">3N / 4D</span>
-      <span class="pkg-ribbon">Best Seller</span>
+      <span class="pkg-duration">5N / 6D</span>
+      <span class="pkg-ribbons">Trending</span>
     </div>
     <div class="pkg-content">
-      <h3>Kashmir – Srinagar · Gulmarg · Pahalgam</h3>
+      <h3>The Jolly Family Fiesta </h3>
       <div class="pkg-features">
         <span><i class="fa-solid fa-hotel"></i> Hotel</span>
         <span><i class="fa-solid fa-car"></i> Cab</span>
-        <span><i class="fa-solid fa-utensils"></i> Breakfast</span>
+        <span><i class="fa-solid fa-utensils"></i> Meals</span>
+        <span><i class="fa-solid fa-ship"></i> Shikara Ride</span>
+        <span><i class="fa-solid fa-cable-car"></i> Gandola Ride</span>
       </div>
-      <div class="pkg-rating">⭐ 4.5</div>
+      <div class="pkg-rating">⭐ 4.8</div>
       <div class="pkg-footer">
-        <strong>₹15,499</strong>
-        <a href="#" class="pkg-btn">Get Quote</a>
+      <strong>₹6,625 <span></span></strong>
+      <div class="pkg-btnn">
+        <a href="https://wa.link/5kjzn9" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <button type="submit"class="pkg-btn" id="heroPopupBtn">Get Quote</button>
+        </div>
       </div>
     </div>
   </div>
+
+
+
+   <div class="pkg-card jammu">
+    <div class="pkg-image">
+      <img src="images/gurez.jpg" loading="lazy" alt="Kashmir Tour">
+      <span class="pkg-duration">4N / 5D</span>
+      <span class="pkg-ribbonss">Premium</span>
+    </div>
+    <div class="pkg-content">
+      <h3>The Jolly Family Roots Retreat </h3>
+      <div class="pkg-features">
+        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
+        <span><i class="fa-solid fa-car"></i> Cab</span>
+        <span><i class="fa-solid fa-utensils"></i> Meals</span>
+        <span><i class="fa-solid fa-ship"></i> Shikara Ride</span>
+      </div>
+      <div class="pkg-rating">⭐ 4.8</div>
+      <div class="pkg-footer">
+      <strong>₹5,815 <span></span></strong>
+      <div class="pkg-btnn">
+        <a href="https://wa.link/bbb6gy" class="pkg-btns"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <button type="submit"class="pkg-btn" id="heroPopupBtn">Get Quote</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   
 
-  <div class="pkg-card jammu">
-    <div class="pkg-image">
-      <img src="images/Arizal.avif" loading="lazy" alt="Jammu Tour">
-      <span class="pkg-duration">2N / 3D</span>
-    </div>
-    <div class="pkg-content">
-      <h3>Vaishno Devi with Patnitop</h3>
-      <div class="pkg-features">
-        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
-        <span><i class="fa-solid fa-car"></i> Cab</span>
-      </div>
-      <div class="pkg-rating">⭐ 4.4</div>
-      <div class="pkg-footer">
-        <strong>₹9,999</strong>
-        <a href="#" class="pkg-btn">Get Quote</a>
-      </div>
-    </div>
-  </div>
+  
 
-  <div class="pkg-card jammu">
-    <div class="pkg-image">
-      <img src="images/Arizal.avif" loading="lazy" alt="Jammu Tour">
-      <span class="pkg-duration">2N / 3D</span>
-    </div>
-    <div class="pkg-content">
-      <h3>Vaishno Devi with Patnitop</h3>
-      <div class="pkg-features">
-        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
-        <span><i class="fa-solid fa-car"></i> Cab</span>
-      </div>
-      <div class="pkg-rating">⭐ 4.4</div>
-      <div class="pkg-footer">
-        <strong>₹9,999</strong>
-        <a href="#" class="pkg-btn">Get Quote</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="pkg-card jammu">
-    <div class="pkg-image">
-      <img src="images/Arizal.avif" loading="lazy" alt="Jammu Tour">
-      <span class="pkg-duration">2N / 3D</span>
-    </div>
-    <div class="pkg-content">
-      <h3>Vaishno Devi with Patnitop</h3>
-      <div class="pkg-features">
-        <span><i class="fa-solid fa-hotel"></i> Hotel</span>
-        <span><i class="fa-solid fa-car"></i> Cab</span>
-      </div>
-      <div class="pkg-rating">⭐ 4.4</div>
-      <div class="pkg-footer">
-        <strong>₹9,999</strong>
-        <a href="#" class="pkg-btn">Get Quote</a>
-      </div>
-    </div>
-  </div>
-
+  
  <!-- //Custom Built Package -->
 
 </section>
@@ -1298,17 +1382,15 @@ body{
     <p>© 2025 Jolly Holidays | Developed by Anees Irshad Bhat</p>
   </div>
 </footer>
-
-
-
+</body>
 <script src="media.css" defer></script>
 <script src="offcanvas.js" defer></script>
 <script src="filter.js" defer></script>
 <script src="popup.js" defer></script>
+<script src="formval.js" defer></script>
+<script src="form-one.js" defer></script>
+<script src="form-two.js"></script>
 <script defer>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="iU61SNqCXZoIWUjxKo7mI";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
-</body>
-
-
 </html>
