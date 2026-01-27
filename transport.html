@@ -318,6 +318,7 @@ header ul {
   justify-content: center;
   max-width:100%;
   height:auto;
+  perspective: 1000px;
 }
 
 .why-travel__image img {
@@ -326,14 +327,16 @@ header ul {
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  transform-style: preserve-3d;
 }
-.why-travel__image img {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+.why-travel__image:hover img {
+  transform: rotateX(12deg) rotateY(-12deg) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
 }
+
 
 
 /* ================= CTA SECTION ================= */
