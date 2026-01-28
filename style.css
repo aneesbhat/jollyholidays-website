@@ -253,7 +253,7 @@ section {
 
 .hero {
   height:80vh;
-  background:url('images/banner.webp') center/cover no-repeat;
+  background:url('images/banner.jpg') center/cover no-repeat;
   display:flex;align-items:center;flex-direction:column;justify-content:center;gap:20px;
   text-align:center;color:white;padding:0px;
   background-attachment: scroll;
