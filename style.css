@@ -256,7 +256,7 @@ section {
   background:url('images/banner.webp') center/cover no-repeat;
   display:flex;align-items:center;flex-direction:column;justify-content:center;gap:20px;
   text-align:center;color:white;padding:0px;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .hero h1 {font-size:42px;margin-bottom:20px;text-shadow:2px 2px 6px rgba(0,0,0,0.6);color:var(--bg--hex);}
 
